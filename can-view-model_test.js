@@ -1,6 +1,7 @@
 var QUnit = require('steal-qunit');
 var viewModel = require('./can-view-model');
-var CanMap = require('can-map');
+
+require('can-map');
 
 QUnit.module('can-view-model');
 
