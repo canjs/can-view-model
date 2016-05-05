@@ -1,11 +1,12 @@
+"use strict";
 var domData = require('can-util/dom/data/data');
-var CanMap = require('can-map');
+var SimpleMap = require('can-simple-map');
 
 module.exports = function (el, attr, val) {
 
 	var scope = domData.get.call(el, "viewModel");
 	if(!scope) {
-		scope = new CanMap();
+		scope = new SimpleMap();
 		domData.set.call(el, "viewModel", scope);
 	}
 	switch (arguments.length) {
@@ -13,9 +14,13 @@ module.exports = function (el, attr, val) {
 		case 1:
 			return scope;
 		case 2:
-			return scope.attr(attr);
+			return "attr" in scope ? scope.attr(attr) : scope[attr];
 		default:
-			scope.attr(attr, val);
+			if("attr" in scope) {
+				scope.attr(attr, val)
+			} else {
+				scope[attr] = val;
+			}
 			return el;
 	}
 };
