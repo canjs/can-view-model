@@ -17,7 +17,7 @@ module.exports = function (el, attr, val) {
 			return "attr" in scope ? scope.attr(attr) : scope[attr];
 		default:
 			if("attr" in scope) {
-				scope.attr(attr, val)
+				scope.attr(attr, val);
 			} else {
 				scope[attr] = val;
 			}

@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/canjs/can-view-model.png?branch=master)](https://travis-ci.org/canjs/can-view-model)
 
-gets or sets the view model of an element
+Gets or sets the view model of an element
 
 ## Usage
 
