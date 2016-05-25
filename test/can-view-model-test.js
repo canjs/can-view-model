@@ -11,9 +11,11 @@ QUnit.module('can-view-model',{
 });
 
 QUnit.test('basics', function(){
-
+	var DefaultMap = types.DefaultMap;
+	types.DefaultMap = undefined;
 	var el = document.createElement('div');
 	viewModel(el, "foo","bar");
 	QUnit.equal( viewModel(el,"foo"), "bar");
 	QUnit.ok(viewModel(el) instanceof SimpleMap, "is can-map");
+	types.DefaultMap = DefaultMap;
 });

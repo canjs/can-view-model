@@ -1,12 +1,13 @@
 "use strict";
 var domData = require('can-util/dom/data/data');
 var SimpleMap = require('can-simple-map');
+var types = require("can-util/js/types/types");
 
 module.exports = function (el, attr, val) {
 
 	var scope = domData.get.call(el, "viewModel");
 	if(!scope) {
-		scope = new SimpleMap();
+		scope = types.DefaultMap ? new types.DefaultMap() : new SimpleMap();
 		domData.set.call(el, "viewModel", scope);
 	}
 	switch (arguments.length) {
