@@ -5,47 +5,47 @@
 
 @signature `canViewModel(element)`
 
-	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist, and returns the map.
+Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist, and returns the map.
 
-	```js
-	var vm = canViewModel(element);
-	```
-	@param {HTMLElement} element Any element in the DOM.
+```js
+var vm = canViewModel(element);
+```
+@param {HTMLElement} element Any element in the DOM.
 
-	@return {can-map|can-define/map/map|Object} The ViewModel associated with this elelement.
+@return {can-map|can-define/map/map|Object} The ViewModel associated with this elelement.
 
 @signature `canViewModel(element, property)`
 
-	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Then gets the **property** inside of the ViewModel and returns that.
+Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Then gets the **property** inside of the ViewModel and returns that.
 
-	```js
-	var foo = canViewModel(element, "foo");
+```
+var foo = canViewModel(element, "foo");
 
-	console.log(foo); // -> "bar"
-	```
+console.log(foo); // -> "bar"
+```
 
-	@param {HTMLElement} element Any element in the DOM.
-	@param {String} property The property to get from the ViewModel.
+@param {HTMLElement} element Any element in the DOM.
+@param {String} property The property to get from the ViewModel.
 
-	@return {*} The value of the property on the ViewModel or undefined if the property doesn't exist.
+@return {*} The value of the property on the ViewModel or undefined if the property doesn't exist.
 
 @signature `canViewModel(element, property, value)`
 
-	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Sets the **property** on that map to **value**.
+Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Sets the **property** on that map to **value**.
 
-	```js
-	canViewModel(element, "foo", "bar");
+```js
+canViewModel(element, "foo", "bar");
 
-	var foo = canViewModel(element, "foo");
+var foo = canViewModel(element, "foo");
 
-	console.log(foo); // -> "bar"
-	```
+console.log(foo); // -> "bar"
+```
 
-	@param {HTMLElement} element ANy element in the DOM.
-	@param {String} property The property that is being set on the ViewModel.
-	@param {*} value The value being set on the property.
+@param {HTMLElement} element ANy element in the DOM.
+@param {String} property The property that is being set on the ViewModel.
+@param {*} value The value being set on the property.
 
-	@return {HTMLElement} The element.
+@return {HTMLElement} The element.
 
 @body
 

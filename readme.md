@@ -19,11 +19,11 @@ Gets the ViewModel of an [element](https://developer.mozilla.org/en-US/docs/Web/
 ### <code>canViewModel(element)</code>
 
 
-	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist, and returns the map.
+Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist, and returns the map.
 
-	```js
-	var vm = canViewModel(element);
-	```
+```js
+var vm = canViewModel(element);
+```
 
 1. __element__ <code>{HTMLElement}</code>:
   Any element in the DOM.
@@ -36,13 +36,13 @@ Gets the ViewModel of an [element](https://developer.mozilla.org/en-US/docs/Web/
 ### <code>canViewModel(element, property)</code>
 
 
-	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Then gets the **property** inside of the ViewModel and returns that.
+Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Then gets the **property** inside of the ViewModel and returns that.
 
-	```js
-	var foo = canViewModel(element, "foo");
+```
+var foo = canViewModel(element, "foo");
 
-	console.log(foo); // -> "bar"
-	```
+console.log(foo); // -> "bar"
+```
 
 
 1. __element__ <code>{HTMLElement}</code>:
@@ -58,15 +58,15 @@ Gets the ViewModel of an [element](https://developer.mozilla.org/en-US/docs/Web/
 ### <code>canViewModel(element, property, value)</code>
 
 
-	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Sets the **property** on that map to **value**.
+Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Sets the **property** on that map to **value**.
 
-	```js
-	canViewModel(element, "foo", "bar");
+```js
+canViewModel(element, "foo", "bar");
 
-	var foo = canViewModel(element, "foo");
+var foo = canViewModel(element, "foo");
 
-	console.log(foo); // -> "bar"
-	```
+console.log(foo); // -> "bar"
+```
 
 
 1. __element__ <code>{HTMLElement}</code>:
@@ -79,7 +79,7 @@ Gets the ViewModel of an [element](https://developer.mozilla.org/en-US/docs/Web/
 
 - __returns__ <code>{HTMLElement}</code>:
   The element.
-  
+   
 
 ## Contributing
 
