@@ -4,54 +4,82 @@
 
 Gets or sets the view model of an element
 
-## Usage
+- <code>[__can-view-model__ function](#can-view-model-function)</code>
+  - <code>[canViewModel(element)](#canviewmodelelement)</code>
+  - <code>[canViewModel(element, property)](#canviewmodelelement-property)</code>
+  - <code>[canViewModel(element, property, value)](#canviewmodelelement-property-value)</code>
 
-### ES6 use
+## API
 
-With StealJS, you can import this module directly in a template that is autorendered:
 
-```js
-import plugin from 'can-view-model';
-```
+## <code>__can-view-model__ function</code>
+Gets the ViewModel of an [element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement). 
 
-### CommonJS use
 
-Use `require` to load `can-view-model` and everything else
-needed to create a template that uses `can-view-model`:
+### <code>canViewModel(element)</code>
 
-```js
-var plugin = require("can-view-model");
-```
 
-## AMD use
+	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist, and returns the map.
 
-Configure the `can` and `jquery` paths and the `can-view-model` package:
+	```js
+	var vm = canViewModel(element);
+	```
 
-```html
-<script src="require.js"></script>
-<script>
-	require.config({
-	    paths: {
-	        "jquery": "node_modules/jquery/dist/jquery",
-	        "can": "node_modules/canjs/dist/amd/can"
-	    },
-	    packages: [{
-		    	name: 'can-view-model',
-		    	location: 'node_modules/can-view-model/dist/amd',
-		    	main: 'lib/can-view-model'
-	    }]
-	});
-	require(["main-amd"], function(){});
-</script>
-```
+1. __element__ <code>{HTMLElement}</code>:
+  Any element in the DOM.
+  
 
-### Standalone use
+- __returns__ <code>{can-map|can-define/map/map|Object}</code>:
+  The ViewModel associated with this elelement.
+  
 
-Load the `global` version of the plugin:
+### <code>canViewModel(element, property)</code>
 
-```html
-<script src='./node_modules/can-view-model/dist/global/can-view-model.js'></script>
-```
+
+	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Then gets the **property** inside of the ViewModel and returns that.
+
+	```js
+	var foo = canViewModel(element, "foo");
+
+	console.log(foo); // -> "bar"
+	```
+
+
+1. __element__ <code>{HTMLElement}</code>:
+  Any element in the DOM.
+1. __property__ <code>{String}</code>:
+  The property to get from the ViewModel.
+  
+
+- __returns__ <code>{*}</code>:
+  The value of the property on the ViewModel or undefined if the property doesn't exist.
+  
+
+### <code>canViewModel(element, property, value)</code>
+
+
+	Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Sets the **property** on that map to **value**.
+
+	```js
+	canViewModel(element, "foo", "bar");
+
+	var foo = canViewModel(element, "foo");
+
+	console.log(foo); // -> "bar"
+	```
+
+
+1. __element__ <code>{HTMLElement}</code>:
+  ANy element in the DOM.
+1. __property__ <code>{String}</code>:
+  The property that is being set on the ViewModel.
+1. __value__ <code>{*}</code>:
+  The value being set on the property.
+  
+
+- __returns__ <code>{HTMLElement}</code>:
+  The element.
+  
 
 ## Contributing
 
