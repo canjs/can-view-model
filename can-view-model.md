@@ -49,6 +49,8 @@ console.log(foo); // -> "bar"
 
 @body
 
+## Use
+
 **can-view-model** is used to get and set properties on an element's ViewModel. Each element in the DOM can have an associated ViewModel. An example of this is a [can-component] and it's associated [can-component.prototype.ViewModel].
 
 This shows a Component and getting its ViewModel:
