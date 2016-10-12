@@ -1,5 +1,6 @@
 @module {function} can-view-model can-view-model
 @parent can-infrastructure
+@package ./package.json
 
 @description Gets the ViewModel of an [element](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement).
 
