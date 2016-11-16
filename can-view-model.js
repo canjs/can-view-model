@@ -3,8 +3,10 @@ var domData = require('can-util/dom/data/data');
 var SimpleMap = require('can-simple-map');
 var types = require("can-util/js/types/types");
 var ns = require("can-util/namespace");
+var getDocument = require("can-util/dom/document/document");
 
 module.exports = ns.viewModel = function (el, attr, val) {
+	el = typeof el === 'string' ? getDocument().querySelector(el) : el;
 
 	var scope = domData.get.call(el, "viewModel");
 	if(!scope) {
