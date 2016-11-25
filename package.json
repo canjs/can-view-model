@@ -23,7 +23,7 @@
     "document": "bit-docs",
     "develop": "done-serve --static --develop --port 8080"
   },
-  "main": "dist/cjs/can-view-model",
+  "main": "can-view-model",
   "browser": {
     "transform": [
       "cssify"
