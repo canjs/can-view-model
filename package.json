@@ -43,12 +43,14 @@
     "npmAlgorithm": "flat"
   },
   "dependencies": {
+    "can-namespace": "1.0.0",
     "can-simple-map": "^3.0.0",
+    "can-types": "^0.1.0",
     "can-util": "^3.0.1"
   },
   "devDependencies": {
     "can-define": "^1.0.5",
-    "can-map": "^3.0.0-pre.3",
+    "can-map": "^3.0.3",
     "bit-docs": "0.0.7",
     "done-serve": "^0.2.0",
     "donejs-cli": "^0.9.5",
