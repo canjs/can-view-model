@@ -1,7 +1,7 @@
 var QUnit = require('steal-qunit');
 var viewModel = require('can-view-model');
 var SimpleMap = require('can-simple-map');
-var types = require('can-util/js/types/types');
+var types = require('can-types');
 
 QUnit.module('can-view-model');
 
