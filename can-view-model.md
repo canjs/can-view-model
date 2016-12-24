@@ -6,18 +6,18 @@
 
 @signature `canViewModel(element)`
 
-Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist, and returns the map.
+Gets the map instance associated with **element**, creating one as a [can-types.DefaultMap] if it doesn’t already exist, and returns the map.
 
 ```js
 var vm = canViewModel(element);
 ```
 @param {HTMLElement} element Any element in the DOM.
 
-@return {can-map|can-define/map/map|Object} The ViewModel associated with this elelement.
+@return {can-map|can-define/map/map|Object} The ViewModel associated with this element.
 
 @signature `canViewModel(element, property)`
 
-Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Then gets the **property** inside of the ViewModel and returns that.
+Gets the map instance associated with **element**, creating one as a [can-types.DefaultMap] if it doesn’t already exist. Then, gets the **property** inside of the ViewModel and returns that.
 
 ```
 var foo = canViewModel(element, "foo");
@@ -28,11 +28,11 @@ console.log(foo); // -> "bar"
 @param {HTMLElement} element Any element in the DOM.
 @param {String} property The property to get from the ViewModel.
 
-@return {*} The value of the property on the ViewModel or undefined if the property doesn't exist.
+@return {*} The value of the property on the ViewModel or undefined if the property doesn’t exist.
 
 @signature `canViewModel(element, property, value)`
 
-Gets the map instance associated with **element**, creating one as a [can-util/js/types/types.DefaultMap] if it doesn't already exist. Sets the **property** on that map to **value**.
+Gets the map instance associated with **element**, creating one as a [can-types.DefaultMap] if it doesn’t already exist. Sets the **property** on that map to **value**.
 
 ```js
 canViewModel(element, "foo", "bar");
@@ -42,7 +42,7 @@ var foo = canViewModel(element, "foo");
 console.log(foo); // -> "bar"
 ```
 
-@param {HTMLElement} element ANy element in the DOM.
+@param {HTMLElement} element Any element in the DOM.
 @param {String} property The property that is being set on the ViewModel.
 @param {*} value The value being set on the property.
 
@@ -52,7 +52,7 @@ console.log(foo); // -> "bar"
 
 ## Use
 
-**can-view-model** is used to get and set properties on an element's ViewModel. Each element in the DOM can have an associated ViewModel. An example of this is a [can-component] and it's associated [can-component.prototype.ViewModel].
+**can-view-model** is used to get and set properties on an element’s ViewModel. Each element in the DOM can have an associated ViewModel. An example of this is a [can-component] and its associated [can-component.prototype.ViewModel].
 
 This shows a Component and getting its ViewModel:
 
@@ -69,7 +69,7 @@ var element = document.querySelector("my-tabs");
 var vm = canViewModel(element);
 ```
 
-The other signatures provide the ability to get and set properties on the ViewModel. For example, this sets the "foo" property on a component's viewModel:
+The other signatures provide the ability to get and set properties on the ViewModel. For example, this sets the `foo` property on a component’s viewModel:
 
 ```js
 var canViewModel = require("can-view-model");
@@ -82,9 +82,9 @@ canViewModel(element, "foo", "bar");
 console.log(vm.foo, "bar");
 ```
 
-## Setting an element's ViewModel
+## Setting an element’s ViewModel
 
-One thing that can-view-model does ***not*** do is provide a way to set what an element's ViewModel should be. To do that, use [can-util/dom/data/data] instead like so:
+One thing that can-view-model does ***not*** do is provide a way to set what an element’s ViewModel should be. To do that, use [can-util/dom/data/data] instead like so:
 
 ```js
 var domData = require("can-util/dom/data/data");
