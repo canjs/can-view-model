@@ -6,9 +6,14 @@ var ns = require("can-namespace");
 var getDocument = require("can-util/dom/document/document");
 
 module.exports = ns.viewModel = function (el, attr, val) {
+	var scope ;
 	el = typeof el === 'string' ? getDocument().querySelector(el) : el;
 
-	var scope = domData.get.call(el, "viewModel");
+	if (types.isMapLike(attr)) {
+		return domData.set.call( el, "viewModel", attr);
+	}
+
+	scope = domData.get.call(el, "viewModel");
 	if(!scope) {
 		scope = types.DefaultMap ? new types.DefaultMap() : new SimpleMap();
 		domData.set.call(el, "viewModel", scope);
