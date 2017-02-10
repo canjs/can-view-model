@@ -1,6 +1,8 @@
 var QUnit = require('steal-qunit');
 var viewModel = require('can-view-model');
 var SimpleMap = require('can-simple-map');
+var CanMap = require('can-map');
+var DefineMap = require("can-define/map/map");
 var types = require('can-types');
 
 QUnit.module('can-view-model');
@@ -27,9 +29,29 @@ QUnit.test('a selector can be passed as the first argument (#6)', function(){
 	types.DefaultMap = DefaultMap;
 });
 
-QUnit.test('set custom Map on element (#5)', function(){
+QUnit.test('set custom can-simple-map on element (#5)', function(){
 	var vm, elVm;
 	var CustomMap = SimpleMap.extend({});
+	var el = document.createElement('div');
+	document.getElementById('qunit-fixture').appendChild(el);
+	vm = new CustomMap({ foo: 'bar' });
+	elVm = viewModel(el, vm);
+	QUnit.equal(viewModel(el,'foo'), 'bar');
+});
+
+QUnit.test('set custom can-map on element (#5)', function(){
+	var vm, elVm;
+	var CustomMap = CanMap.extend({});
+	var el = document.createElement('div');
+	document.getElementById('qunit-fixture').appendChild(el);
+	vm = new CustomMap({ foo: 'bar' });
+	elVm = viewModel(el, vm);
+	QUnit.equal(viewModel(el,'foo'), 'bar');
+});
+
+QUnit.test('set custom can-define-map on element (#5)', function(){
+	var vm, elVm;
+	var CustomMap = DefineMap.extend({});
 	var el = document.createElement('div');
 	document.getElementById('qunit-fixture').appendChild(el);
 	vm = new CustomMap({ foo: 'bar' });
