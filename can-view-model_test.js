@@ -35,8 +35,8 @@ QUnit.test('Allow passing jquery element', function(){
 	el.className = 'the-el';
 	document.getElementById('qunit-fixture').appendChild(el);
 	viewModel($('.the-el'), 'foo', 'bar');
-	QUnit.equal(viewModel('.the-el', 'foo'), 'bar');
-	QUnit.equal(viewModel($('.the-el'), 'foo'), 'bar');
+	QUnit.equal(viewModel('.the-el', 'foo'), 'bar', 'It reads view scope from html element');
+	QUnit.equal(viewModel($('.the-el'), 'foo'), 'bar', 'It reads view scope from jquery element');
 	QUnit.ok(viewModel(el) instanceof SimpleMap, 'is can-map');
 	types.DefaultMap = DefaultMap;
 });
