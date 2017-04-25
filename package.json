@@ -35,9 +35,10 @@
     "can-util": "^3.1.1"
   },
   "devDependencies": {
-    "can-define": "^1.0.5",
-    "can-map": "^3.0.3",
     "bit-docs": "0.0.7",
+    "can-define": "^1.0.5",
+    "can-jquery": "^3.0.6",
+    "can-map": "^3.0.3",
     "done-serve": "^0.2.0",
     "donejs-cli": "^0.9.5",
     "generator-donejs": "^0.9.0",

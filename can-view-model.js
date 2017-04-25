@@ -4,9 +4,13 @@ var SimpleMap = require('can-simple-map');
 var types = require("can-types");
 var ns = require("can-namespace");
 var getDocument = require("can-util/dom/document/document");
-
+var isArrayLike = require('can-util/js/is-array-like/is-array-like');
 module.exports = ns.viewModel = function (el, attr, val) {
-	el = typeof el === 'string' ? getDocument().querySelector(el) : el;
+	if (typeof el === 'string') {
+		el = getDocument().querySelector(el);
+	} else if (isArrayLike(el)) {
+		el= el[0];
+	}
 
 	var scope = domData.get.call(el, "viewModel");
 	if(!scope) {
