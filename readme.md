@@ -1,5 +1,7 @@
 # can-view-model
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/canjs/can-view-model.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/canjs/can-view-model.png?branch=master)](https://travis-ci.org/canjs/can-view-model)
 
 Gets or sets the view model of an element
