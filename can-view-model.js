@@ -6,13 +6,18 @@ var ns = require("can-namespace");
 var getDocument = require("can-util/dom/document/document");
 var isArrayLike = require('can-util/js/is-array-like/is-array-like');
 module.exports = ns.viewModel = function (el, attr, val) {
+	var scope ;
 	if (typeof el === 'string') {
 		el = getDocument().querySelector(el);
 	} else if (isArrayLike(el)) {
 		el= el[0];
 	}
 
-	var scope = domData.get.call(el, "viewModel");
+	if (types.isMapLike(attr)) {
+		return domData.set.call( el, "viewModel", attr);
+	}
+
+	scope = domData.get.call(el, "viewModel");
 	if(!scope) {
 		scope = types.DefaultMap ? new types.DefaultMap() : new SimpleMap();
 		domData.set.call(el, "viewModel", scope);
