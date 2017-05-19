@@ -58,3 +58,19 @@ QUnit.test('set custom can-define-map on element (#5)', function(){
 	elVm = viewModel(el, vm);
 	QUnit.equal(viewModel(el,'foo'), 'bar');
 });
+
+QUnit.test('Allow passing array like (jQuery) element', function(){
+	var DefaultMap = types.DefaultMap;
+	var $el = {};
+	types.DefaultMap = undefined;
+	var el = document.createElement('div');
+	el.className = 'the-el';
+	$el[0] = el;
+	$el.length = 1;
+	document.getElementById('qunit-fixture').appendChild(el);
+	viewModel($el, 'foo', 'bar');
+	QUnit.equal(viewModel('.the-el', 'foo'), 'bar', 'It reads view scope from html element');
+	QUnit.equal(viewModel($el, 'foo'), 'bar', 'It reads view scope from array like (jQuery) element');
+	QUnit.ok(viewModel(el) instanceof SimpleMap, 'is can-map');
+	types.DefaultMap = DefaultMap;
+});
