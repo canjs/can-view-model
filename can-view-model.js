@@ -9,7 +9,7 @@ module.exports = ns.viewModel = function (el, attr, val) {
 	var scope ;
 	if (typeof el === 'string') {
 		el = getDocument().querySelector(el);
-	} else if (isArrayLike(el)) {
+	} else if (isArrayLike(el) && !el.nodeType) {
 		el= el[0];
 	}
 
