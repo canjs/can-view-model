@@ -74,3 +74,14 @@ QUnit.test('Allow passing array like (jQuery) element', function(){
 	QUnit.ok(viewModel(el) instanceof SimpleMap, 'is can-map');
 	types.DefaultMap = DefaultMap;
 });
+
+QUnit.test('elements with length property not treated as arraylikes (#31)', function() {
+	var el = document.createElement('select');
+	document.getElementById('qunit-fixture').appendChild(el);
+	QUnit.equal(el.length, 0, "Select has length property (0 for empty)");
+	QUnit.deepEqual(viewModel(el).get(), {}, "viewModel created on empty select");
+	var opt = document.createElement('option');
+	el.appendChild(opt);
+	QUnit.equal(el.length, 1, "Select has length 1");
+	QUnit.deepEqual(viewModel(el).get(), {}, "viewModel created on non-empty select");
+});
