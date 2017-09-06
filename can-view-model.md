@@ -10,8 +10,14 @@ Gets the map instance associated with **element**, creating one as a [can-types.
 
 ```js
 var vm = canViewModel(element);
+
+var vm2 = canViewModel("#element2id");
+
+var vm3 = canViewModel($([element3]));
+
+var vm4 = canViewModel(document.querySelectorAll(".element4class"));
 ```
-@param {HTMLElement} element Any element in the DOM.
+@param {HTMLElement|String|ArrayLike} element Any element in the DOM, represented by a reference to the element itself, a query selector string, or an Array-like holding the element in its zero index.
 
 @return {can-map|can-define/map/map|Object} The ViewModel associated with this element.
 
@@ -25,7 +31,7 @@ var foo = canViewModel(element, "foo");
 console.log(foo); // -> "bar"
 ```
 
-@param {HTMLElement} element Any element in the DOM.
+@param {HTMLElement|String|ArrayLike} element Any element in the DOM, represented by a reference to the element itself, a query selector string, or an Array-like holding the element in its zero index.
 @param {String} property The property to get from the ViewModel.
 
 @return {*} The value of the property on the ViewModel or undefined if the property doesn’t exist.
@@ -42,7 +48,7 @@ var foo = canViewModel(element, "foo");
 console.log(foo); // -> "bar"
 ```
 
-@param {HTMLElement} element Any element in the DOM.
+@param {HTMLElement|String|ArrayLike} element Any element in the DOM, represented by a reference to the element itself, a query selector string, or an Array-like holding the element in its zero index.
 @param {String} property The property that is being set on the ViewModel.
 @param {*} value The value being set on the property.
 
