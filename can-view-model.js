@@ -3,7 +3,7 @@ var domData = require("can-util/dom/data/data");
 var SimpleMap = require("can-simple-map");
 var types = require("can-types");
 var ns = require("can-namespace");
-var getDocument = require("can-util/dom/document/document");
+var getDocument = require("can-globals/document/document");
 var isArrayLike = require("can-util/js/is-array-like/is-array-like");
 var canReflect = require("can-reflect");
 
