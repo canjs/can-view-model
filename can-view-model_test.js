@@ -1,7 +1,6 @@
 var QUnit = require('steal-qunit');
 var viewModel = require('can-view-model');
 var SimpleMap = require('can-simple-map');
-var DefineMap = require("can-define/map/map");
 
 QUnit.module('can-view-model');
 
