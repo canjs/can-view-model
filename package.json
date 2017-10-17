@@ -1,6 +1,6 @@
 {
   "name": "can-view-model",
-  "version": "3.5.0",
+  "version": "4.0.0-pre.0",
   "description": "gets or sets the view model of an element",
   "homepage": "http://canjs.com",
   "author": {
@@ -31,13 +31,11 @@
   "dependencies": {
     "can-namespace": "1.0.0",
     "can-reflect": "^1.2.1",
-    "can-simple-map": "^3.3.0",
-    "can-types": "^1.1.0",
+    "can-simple-map": "^4.0.0-pre.2",
     "can-util": "^3.9.5"
   },
   "devDependencies": {
     "can-define": "^1.3.3",
-    "can-map": "^3.3.1",
     "detect-cyclic-packages": "^1.1.0",
     "jshint": "^2.9.1",
     "steal": "^1.0.1",

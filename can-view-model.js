@@ -1,7 +1,6 @@
 "use strict";
 var domData = require("can-util/dom/data/data");
 var SimpleMap = require("can-simple-map");
-var types = require("can-types");
 var ns = require("can-namespace");
 var getDocument = require("can-util/dom/document/document");
 var isArrayLike = require("can-util/js/is-array-like/is-array-like");
@@ -21,7 +20,7 @@ module.exports = ns.viewModel = function (el, attr, val) {
 
 	scope = domData.get.call(el, "viewModel");
 	if(!scope) {
-		scope = types.DefaultMap ? new types.DefaultMap() : new SimpleMap();
+		scope = new SimpleMap();
 		domData.set.call(el, "viewModel", scope);
 	}
 	switch (arguments.length) {
@@ -29,13 +28,9 @@ module.exports = ns.viewModel = function (el, attr, val) {
 		case 1:
 			return scope;
 		case 2:
-			return "attr" in scope ? scope.attr(attr) : scope[attr];
+			return canReflect.getKeyValue(scope, attr);
 		default:
-			if("attr" in scope) {
-				scope.attr(attr, val);
-			} else {
-				scope[attr] = val;
-			}
+			canReflect.setKeyValue(scope, attr, val);
 			return el;
 	}
 };
