@@ -1,8 +1,8 @@
 {
   "name": "can-view-model",
   "version": "4.0.0-pre.3",
-  "description": "gets or sets the view model of an element",
-  "homepage": "http://canjs.com",
+  "description": "Gets or sets the view model of an element.",
+  "homepage": "https://canjs.com/doc/can-view-model.html",
   "author": {
     "name": "Bitovi",
     "email": "contact@bitovi.com",
@@ -28,6 +28,7 @@
     "donejs"
   ],
   "dependencies": {
+    "can-globals": "^0.2.3",
     "can-namespace": "1.0.0",
     "can-reflect": "^1.2.1",
     "can-simple-map": "^4.0.0-pre.2",
