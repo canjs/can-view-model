@@ -1,27 +1,29 @@
 "use strict";
-var domData = require("can-util/dom/data/data");
+
 var SimpleMap = require("can-simple-map");
 var ns = require("can-namespace");
 var getDocument = require("can-globals/document/document");
-var isArrayLike = require("can-util/js/is-array-like/is-array-like");
 var canReflect = require("can-reflect");
+var canSymbol = require('can-symbol');
+
+var viewModelSymbol = canSymbol.for('can.viewModel');
 
 module.exports = ns.viewModel = function (el, attr, val) {
-	var scope ;
 	if (typeof el === "string") {
 		el = getDocument().querySelector(el);
-	} else if (isArrayLike(el) && !el.nodeType) {
-		el= el[0];
+	} else if (canReflect.isListLike(el) && !el.nodeType) {
+		el = el[0];
 	}
 
 	if (canReflect.isObservableLike(attr) && canReflect.isMapLike(attr)) {
-		return domData.set.call( el, "viewModel", attr);
+		el[viewModelSymbol] = attr;
+		return;
 	}
 
-	scope = domData.get.call(el, "viewModel");
+	var scope = el[viewModelSymbol];
 	if(!scope) {
 		scope = new SimpleMap();
-		domData.set.call(el, "viewModel", scope);
+		el[viewModelSymbol] = scope;
 	}
 	switch (arguments.length) {
 		case 0:
