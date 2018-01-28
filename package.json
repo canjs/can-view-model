@@ -1,17 +1,16 @@
 {
   "name": "can-view-model",
-  "version": "3.5.2",
-  "description": "gets or sets the view model of an element",
-  "homepage": "http://canjs.com",
+  "version": "4.0.0-pre.6",
+  "description": "Gets or sets the view model of an element.",
+  "homepage": "https://canjs.com/doc/can-view-model.html",
   "author": {
     "name": "Bitovi",
     "email": "contact@bitovi.com",
     "url": "http://bitovi.com"
   },
   "scripts": {
-    "preversion": "npm test && npm run build",
-    "version": "git commit -am \"Update dist for release\" && git checkout -b release && git add -f dist/",
-    "postversion": "git push --tags && git checkout master && git branch -D release && git push",
+    "preversion": "npm test",
+    "postpublish": "git push --tags && git push",
     "testee": "testee test/test.html --browsers firefox",
     "test": "npm run detect-cycle && npm run jshint && npm run testee",
     "jshint": "jshint ./*.js --config",
@@ -19,7 +18,6 @@
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "build": "node build.js",
     "develop": "done-serve --static --develop --port 8080",
     "detect-cycle": "detect-cyclic-packages --ignore done-serve"
   },
@@ -29,16 +27,13 @@
     "donejs"
   ],
   "dependencies": {
-    "can-globals": "<2.0.0",
+    "can-globals": "^1.0.0",
     "can-namespace": "1.0.0",
     "can-reflect": "^1.2.1",
-    "can-simple-map": "^3.3.0",
-    "can-types": "^1.1.0",
-    "can-util": "^3.9.5"
+    "can-simple-map": "^4.0.0",
+    "can-symbol": "^1.5.0"
   },
   "devDependencies": {
-    "can-define": "^1.3.3",
-    "can-map": "^3.3.1",
     "detect-cyclic-packages": "^1.1.0",
     "jshint": "^2.9.1",
     "steal": "^1.0.1",
