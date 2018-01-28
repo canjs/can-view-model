@@ -1,41 +1,38 @@
 "use strict";
-var domData = require("can-util/dom/data/data");
+
 var SimpleMap = require("can-simple-map");
-var types = require("can-types");
 var ns = require("can-namespace");
-var getDocument = require("can-util/dom/document/document");
-var isArrayLike = require("can-util/js/is-array-like/is-array-like");
+var getDocument = require("can-globals/document/document");
 var canReflect = require("can-reflect");
+var canSymbol = require('can-symbol');
+
+var viewModelSymbol = canSymbol.for('can.viewModel');
 
 module.exports = ns.viewModel = function (el, attr, val) {
-	var scope ;
 	if (typeof el === "string") {
 		el = getDocument().querySelector(el);
-	} else if (isArrayLike(el) && !el.nodeType) {
-		el= el[0];
+	} else if (canReflect.isListLike(el) && !el.nodeType) {
+		el = el[0];
 	}
 
 	if (canReflect.isObservableLike(attr) && canReflect.isMapLike(attr)) {
-		return domData.set.call( el, "viewModel", attr);
+		el[viewModelSymbol] = attr;
+		return;
 	}
 
-	scope = domData.get.call(el, "viewModel");
+	var scope = el[viewModelSymbol];
 	if(!scope) {
-		scope = types.DefaultMap ? new types.DefaultMap() : new SimpleMap();
-		domData.set.call(el, "viewModel", scope);
+		scope = new SimpleMap();
+		el[viewModelSymbol] = scope;
 	}
 	switch (arguments.length) {
 		case 0:
 		case 1:
 			return scope;
 		case 2:
-			return "attr" in scope ? scope.attr(attr) : scope[attr];
+			return canReflect.getKeyValue(scope, attr);
 		default:
-			if("attr" in scope) {
-				scope.attr(attr, val);
-			} else {
-				scope[attr] = val;
-			}
+			canReflect.setKeyValue(scope, attr, val);
 			return el;
 	}
 };
