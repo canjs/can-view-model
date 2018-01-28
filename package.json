@@ -18,7 +18,6 @@
     "release:patch": "npm version patch && npm publish",
     "release:minor": "npm version minor && npm publish",
     "release:major": "npm version major && npm publish",
-    "build": "node build.js",
     "develop": "done-serve --static --develop --port 8080",
     "detect-cycle": "detect-cyclic-packages --ignore done-serve"
   },
@@ -28,10 +27,10 @@
     "donejs"
   ],
   "dependencies": {
-    "can-globals": "<2.0.0",
+    "can-globals": "^1.0.0",
     "can-namespace": "1.0.0",
     "can-reflect": "^1.2.1",
-    "can-simple-map": "^4.0.0-pre.2",
+    "can-simple-map": "^4.0.0",
     "can-symbol": "^1.5.0"
   },
   "devDependencies": {
