@@ -9,7 +9,7 @@
 
 Gets the map instance associated with **element**, creating one as a [can-types.DefaultMap] if it doesn’t already exist, and returns the map.
 
-```javascript
+```js
 const vm = canViewModel(element);
 
 const vm2 = canViewModel("#element2id");
@@ -41,7 +41,7 @@ console.log(foo); // -> "bar"
 
 Gets the map instance associated with **element**, creating one as a [can-types.DefaultMap] if it doesn’t already exist. Sets the **property** on that map to **value**.
 
-```javascript
+```js
 canViewModel(element, "foo", "bar");
 
 const foo = canViewModel(element, "foo");
@@ -69,7 +69,7 @@ This shows a Component and getting its ViewModel:
 </my-tabs>
 ```
 
-```javascript
+```js
 import canViewModel from "can-view-model";
 
 const element = document.querySelector("my-tabs");
@@ -78,7 +78,7 @@ const vm = canViewModel(element);
 
 The other signatures provide the ability to get and set properties on the ViewModel. For example, this sets the `foo` property on a component’s viewModel:
 
-```javascript
+```js
 import canViewModel from "can-view-model";
 
 const element = document.querySelector("my-tabs");
@@ -93,7 +93,7 @@ console.log(vm.foo, "bar");
 
 One thing that can-view-model does ***not*** do is provide a way to set what an element’s ViewModel should be. To do that, use [can-util/dom/data/data] instead like so:
 
-```javascript
+```js
 import domData from "can-util/dom/data/data";
 import DefineMap from "can-define/map/map";
 
