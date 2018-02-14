@@ -10,13 +10,13 @@
 Gets the map instance associated with **element**, creating one as a [can-types.DefaultMap] if it doesn’t already exist, and returns the map.
 
 ```js
-const vm = canViewModel(element);
+const vm = canViewModel( element );
 
-const vm2 = canViewModel("#element2id");
+const vm2 = canViewModel( "#element2id" );
 
-const vm3 = canViewModel($([element3]));
+const vm3 = canViewModel( $( [ element3 ] ) );
 
-const vm4 = canViewModel(document.querySelectorAll(".element4class"));
+const vm4 = canViewModel( document.querySelectorAll( ".element4class" ) );
 ```
 @param {HTMLElement|String|ArrayLike} element Any element in the DOM, represented by a reference to the element itself, a query selector string, or an Array-like holding the element in its zero index.
 
@@ -42,11 +42,11 @@ console.log(foo); // -> "bar"
 Gets the map instance associated with **element**, creating one as a [can-types.DefaultMap] if it doesn’t already exist. Sets the **property** on that map to **value**.
 
 ```js
-canViewModel(element, "foo", "bar");
+canViewModel( element, "foo", "bar" );
 
-const foo = canViewModel(element, "foo");
+const foo = canViewModel( element, "foo" );
 
-console.log(foo); // -> "bar"
+console.log( foo ); // -> "bar"
 ```
 
 @param {HTMLElement|String|ArrayLike} element Any element in the DOM, represented by a reference to the element itself, a query selector string, or an Array-like holding the element in its zero index.
@@ -72,8 +72,8 @@ This shows a Component and getting its ViewModel:
 ```js
 import canViewModel from "can-view-model";
 
-const element = document.querySelector("my-tabs");
-const vm = canViewModel(element);
+const element = document.querySelector( "my-tabs" );
+const vm = canViewModel( element );
 ```
 
 The other signatures provide the ability to get and set properties on the ViewModel. For example, this sets the `foo` property on a component’s viewModel:
@@ -81,12 +81,12 @@ The other signatures provide the ability to get and set properties on the ViewMo
 ```js
 import canViewModel from "can-view-model";
 
-const element = document.querySelector("my-tabs");
-const vm = canViewModel(element);
+const element = document.querySelector( "my-tabs" );
+const vm = canViewModel( element );
 
-canViewModel(element, "foo", "bar");
+canViewModel( element, "foo", "bar" );
 
-console.log(vm.foo, "bar");
+console.log( vm.foo, "bar" );
 ```
 
 ## Setting an element’s ViewModel
@@ -97,9 +97,9 @@ One thing that can-view-model does ***not*** do is provide a way to set what an 
 import domData from "can-util/dom/data/data";
 import DefineMap from "can-define/map/map";
 
-const element = document.querySelector("#my-id");
+const element = document.querySelector( "#my-id" );
 
 const myVm = new DefineMap();
 
-domData.set.call(element, "viewModel", myVm);
+domData.set.call( element, "viewModel", myVm );
 ```
