@@ -27,7 +27,7 @@
     "donejs"
   ],
   "dependencies": {
-    "can-globals": "^1.0.0",
+    "can-globals": "1.1.1",
     "can-namespace": "1.0.0",
     "can-reflect": "^1.2.1",
     "can-simple-map": "^4.0.0",
