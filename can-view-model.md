@@ -94,12 +94,12 @@ console.log( vm.foo, "bar" );
 One thing that can-view-model does ***not*** do is provide a way to set what an element’s ViewModel should be. To do that, use [can-util/dom/data/data] instead like so:
 
 ```js
-import domData from "can-util/dom/data/data";
+import domData from "can-dom-data";
 import DefineMap from "can-define/map/map";
 
 const element = document.querySelector( "#my-id" );
 
 const myVm = new DefineMap();
 
-domData.set.call( element, "viewModel", myVm );
+domData.set( element, "viewModel", myVm );
 ```
