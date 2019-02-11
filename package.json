@@ -1,6 +1,6 @@
 {
   "name": "can-view-model",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Gets or sets the view model of an element.",
   "homepage": "https://canjs.com/doc/can-view-model.html",
   "author": {
