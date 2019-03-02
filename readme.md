@@ -5,8 +5,6 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/canjs/can-view-model/blob/master/LICENSE.md)
 [![npm version](https://badge.fury.io/js/can-view-model.svg)](https://www.npmjs.com/package/can-view-model)
 [![Travis build status](https://travis-ci.org/canjs/can-view-model.svg?branch=master)](https://travis-ci.org/canjs/can-view-model)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/canjs/can-view-model?branch=master&svg=true)](https://ci.appveyor.com/project/matthewp/can-view-model)
-[![Coverage status](https://coveralls.io/repos/github/canjs/can-view-model/badge.svg?branch=master)](https://coveralls.io/github/canjs/can-view-model?branch=master)
 [![Greenkeeper badge](https://badges.greenkeeper.io/canjs/can-view-model.svg)](https://greenkeeper.io/)
 
 Gets or sets the view model of an element
